@@ -62,21 +62,21 @@ We are using GitHub for versioning and team collaboration:
 
 
 ## 📁 Project Structure
-```
-AI-pneumonia-classifier/
-    ├── chest_xray/ # Local copy of the dataset (if used outside Kaggle/Colab)
-    │ ├── train/
-    │ ├── test/
-    │ └── val/
-    ├── notebooks/ # Jupyter/Colab notebooks for EDA, modeling, etc.
-    │ └── preprocess.ipynb
-    ├── models/ # Trained model files (e.g., .h5, .pkl)
-    ├── outputs/ # Plots, confusion matrices, logs
-    ├── presentation/ # Slide deck and recorded video (PDF, MP4)
-    ├── report/ # Final overall report
-    ├── utils/ # Utility scripts (e.g., preprocessing functions)
-    └── .README.md # Project summary and documentation
-```
+
+**AI-pneumonia-classifier/**  
+
+├── chest_xray/ – Local copy of the dataset (if used outside Kaggle/Colab)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── train/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── test/  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── val/  
+├── notebooks/ – Jupyter/Colab notebooks for EDA, modeling, etc.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [preprocessing.ipynb](https://colab.research.google.com/github/omarsagoo/AI-pneumonia-classifier/blob/main/notebooks/preprocessing.ipynb)  
+├── models/ – Trained model files (e.g., `.h5`, `.pkl`)  
+├── outputs/ – Plots, confusion matrices, logs  
+├── presentation/ – Slide deck and recorded video (PDF, MP4)  
+├── report/ – Final overall report  
+├── utils/ – Utility scripts (e.g., preprocessing functions)  
+└── README.md – Project summary and documentation
 
 ## 🚀 Deployment Plan (To Be Finalized)
 
