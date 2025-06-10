@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/omarsagoo/AI-pneumonia-classifier/)
+
 # 🩺 Doctor AI Will See You Now – Pneumonia Detection from Chest X-Rays
 
 ## 📌 Project Overview
@@ -48,8 +50,7 @@ This project is being developed using **Google Colab** for ease of collaboration
 
 ### How to Access Our Notebooks
 1. Open the desired notebook from the `/notebooks` directory in this repo.
-2. Click the **"Open in Colab"** badge at the top of the notebook *(or use the button below)*:
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Jungleislander/AAI-510-01-Team-7/)
+2. Click the **"Open in Colab"** badge at the top of the notebook *(or use the badge at the top of the readme)*:
 
 > ⚠️ Note: Make sure to copy the dataset to your own Google Drive or mount it in the notebook if running locally. We recommend working with a shared Drive folder linked to Colab for persistent access.
 
