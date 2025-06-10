@@ -36,6 +36,22 @@ We are building on the approach introduced by Amy Jang in her [TensorFlow Pneumo
 - **Metrics:** Accuracy, Precision, Recall, F1 Score, Confusion Matrix, ROC-AUC
 - **Tools:** Python, Jupyter/Colab, GitHub, Google Drive, Zoom
 
+## 📁 Project Structure
+```
+AI-pneumonia-classifier/
+    ├── chest_xray/ # Local copy of the dataset (if used outside Kaggle/Colab)
+    │ ├── train/
+    │ ├── test/
+    │ └── val/
+    ├── notebooks/ # Jupyter/Colab notebooks for EDA, modeling, etc.
+    │ └── preprocess.ipynb
+    ├── models/ # Trained model files (e.g., .h5, .pkl)
+    ├── outputs/ # Plots, confusion matrices, logs
+    ├── presentation/ # Slide deck and recorded video (PDF, MP4)
+    ├── report/ # Final overall report
+    ├── utils/ # Utility scripts (e.g., preprocessing functions)
+    └── .README.md # Project summary and documentation
+```
 
 ## 🚀 Deployment Plan (To Be Finalized)
 
