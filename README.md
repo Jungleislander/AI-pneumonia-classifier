@@ -36,6 +36,30 @@ We are building on the approach introduced by Amy Jang in her [TensorFlow Pneumo
 - **Metrics:** Accuracy, Precision, Recall, F1 Score, Confusion Matrix, ROC-AUC
 - **Tools:** Python, Jupyter/Colab, GitHub, Google Drive, Zoom
 
+## 💻 Collaboration & Environment
+
+This project is being developed using **Google Colab** for ease of collaboration, GPU acceleration, and seamless integration with GitHub.
+
+### Why Google Colab?
+- No local setup required
+- Supports GPU/TPU for faster model training
+- Easy to share and co-edit notebooks in real-time
+- Direct integration with Google Drive and GitHub
+
+### How to Access Our Notebooks
+1. Open the desired notebook from the `/notebooks` directory in this repo.
+2. Click the **"Open in Colab"** badge at the top of the notebook *(or use the button below)*:
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Jungleislander/AAI-510-01-Team-7/)
+
+> ⚠️ Note: Make sure to copy the dataset to your own Google Drive or mount it in the notebook if running locally. We recommend working with a shared Drive folder linked to Colab for persistent access.
+
+### Version Control
+We are using GitHub for versioning and team collaboration:
+- All team members push and pull from the main repository.
+- Code changes are committed with clear messages and organized by notebook sections.
+- We periodically export `.ipynb` files from Colab and sync them back to the repo.
+
+
 ## 📁 Project Structure
 ```
 AI-pneumonia-classifier/
