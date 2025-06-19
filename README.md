@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/omarsagoo/AI-pneumonia-classifier/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Jungleislander/AI-pneumonia-classifier/)
 
 # 🩺 Doctor AI Will See You Now – Pneumonia Detection from Chest X-Rays
 
@@ -38,6 +38,20 @@ We are building on the approach introduced by Amy Jang in her [TensorFlow Pneumo
 - **Metrics:** Accuracy, Precision, Recall, F1 Score, Confusion Matrix, ROC-AUC
 - **Tools:** Python, Jupyter/Colab, GitHub, Google Drive, Zoom
 
+## 🌐 Live Demo
+
+The AI-powered pneumonia classification web application is live and accessible here:
+
+🔗 [ai-pneumonia-classifier.onrender.com](https://ai-pneumonia-classifier.onrender.com/)
+
+### Features:
+- Upload chest X-ray images for real-time pneumonia prediction using a trained deep learning model.
+- Choose from built-in sample X-rays to test the app without uploading your own.
+- Clean and responsive web interface with automatic file cleanup for efficiency and security.
+
+> ⚠️ Note: Uploaded images are temporarily stored in memory and automatically deleted after use. This app uses an ephemeral filesystem on Render, so uploaded files do not persist between restarts.
+
+
 ## 💻 Collaboration & Environment
 
 This project is being developed using **Google Colab** for ease of collaboration, GPU acceleration, and seamless integration with GitHub.
@@ -72,11 +86,21 @@ We are using GitHub for versioning and team collaboration:
 ├── notebooks/ – Jupyter/Colab notebooks for EDA, modeling, etc.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── utils/ – Utility scripts (e.g., preprocessing functions)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── preprocessor.py - Adds utility functions for data preprocessing.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [preprocessing.ipynb](https://colab.research.google.com/github/omarsagoo/AI-pneumonia-classifier/blob/main/notebooks/preprocessing.ipynb)  
-├── models/ – Trained model files (e.g., `.h5`, `.pkl`)  
-├── outputs/ – Plots, confusion matrices, logs  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──  [deployed_model_notebook.ipynb](https://colab.research.google.com/github/Jungleislander/AI-pneumonia-classifier/blob/main/notebooks/deployed_model_notebook.ipynb)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [preprocessing.ipynb](https://colab.research.google.com/github/Jungleislander/AI-pneumonia-classifier/blob/main/notebooks/preprocessing.ipynb)  
+├── models/ – Trained model files
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── xray_model.keras
 ├── presentation/ – Slide deck and recorded video (PDF, MP4)  
 ├── report/ – Final overall report  
+├── static/ – static directory for the deployed application
+├── templates/ – html files for the deployed application
+├── .dockerignore - what to ignore inside the docker image
+├── .gitignore - what to ignore for git
+├── app.py – main server application 
+├── Dockerfile – docker image build instructions
+├── requirements.txt - required packages for the flask app
+├── environment.yml - required packages for the conda environment
+├── makefile - make instructions
 └── README.md – Project summary and documentation
 
 ## Prerequisites: 
@@ -206,6 +230,17 @@ The following commands are available in this project’s `Makefile`:
     $ make verify
     ```
 
+- **Run the flask app**:
+
+    This command will run the python flask app for the model. 
+
+    ```bash
+    $ make run
+    ```
+
+    > ⚠️ Note: If running the application locally, navigate to http://127.0.0.1:5000
+
+
 #### Example workflows:
 
 To simplify knowing which commands you need to run and when you can follow these instructions:
@@ -289,11 +324,6 @@ To simplify knowing which commands you need to run and when you can follow these
     $ git commit -m "This is my commit message!"
     $ git push origin <branch_name>
     ```
-
-
-## 🚀 Deployment Plan (To Be Finalized)
-
-TODO
 
 ## 📌 Reference Notebooks
 
