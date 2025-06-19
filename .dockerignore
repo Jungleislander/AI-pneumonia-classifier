@@ -1,0 +1,25 @@
+# Bytecode & cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment / Jupyter
+.env
+.ipynb_checkpoints/
+*.ipynb
+notebooks/
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+chest_xray/
+proposal/
+report/
+presentation/
+outputs/
