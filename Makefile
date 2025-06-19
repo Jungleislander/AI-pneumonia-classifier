@@ -43,3 +43,6 @@ freeze:
 verify:
 	@echo "Ensure you are in the correct conda environment. There should be an * next to the name of the current active env."
 	conda info --envs
+
+run:
+	python app.py

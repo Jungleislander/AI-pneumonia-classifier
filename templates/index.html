@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* quick thumbnail preview styling */
+        #preview { margin-top:1rem; max-width:400px; border:1px solid #ccc; padding:8px; display:none; }
+        .hidden   { display:none; }
+    </style>
+</head>
+<body>
+    <h1>Pneumonia Detection from Chest X-ray</h1>
+
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('predict') }}">
+        <!-- Upload option -->
+        <label for="file">Upload a chest X-ray image:</label><br>
+        <input type="file" name="file" id="file" accept="image/*">
+        <br><br>
+
+        <!-- Sample-select option -->
+        <label for="sample">Or select a test image:</label><br>
+        <select name="sample" id="sample">
+            <option value="" data-src="">-- Choose a sample --</option>
+            {% for fname in sample_files %}
+                <option value="{{ fname }}"
+                        data-src="{{ url_for('static', filename='samples/' + fname) }}">
+                    {{ fname }}
+                </option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <button type="submit">Run Prediction</button>
+    </form>
+
+    <!-- Live preview -->
+    <img id="preview" src="#" alt="Preview" style="display:none; max-width:400px;">
+
+    {% if prediction %}
+        <div class="result">
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+            <p class="confidence">Confidence Score: {{ confidence }}</p>
+        </div>
+    {% elif error %}
+        <div class="error">
+            <p><strong>Error:</strong> {{ error }}</p>
+        </div>
+    {% endif %}
+
+    {% if image_data %}
+        <div style="margin-top:2rem;">
+            <h3>Uploaded Image:</h3>
+            <img src="data:image/png;base64,{{ image_data }}" alt="Last X-ray"
+                 style="max-width:400px;border:1px solid #ccc;padding:10px;">
+        </div>
+    {% endif %}
+
+<script>
+/* Elements */
+const fileInput   = document.getElementById('file');
+const sampleSel   = document.getElementById('sample');
+const previewImg  = document.getElementById('preview');
+
+/* Helper: show preview & unhide */
+function showPreview(src) {
+    previewImg.src = src;
+    previewImg.style.display = 'block';
+}
+
+/* --- Handle file upload --- */
+fileInput.addEventListener('change', e => {
+    if (fileInput.files.length) {
+        sampleSel.value = "";                // clear sample choice
+        const reader = new FileReader();
+        reader.onload = ev => showPreview(ev.target.result);
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        previewImg.style.display = 'none';
+    }
+});
+
+/* --- Handle sample select --- */
+sampleSel.addEventListener('change', e => {
+    if (sampleSel.value) {
+        fileInput.value = "";  // Clear file input
+
+        const selectedOption = sampleSel.options[sampleSel.selectedIndex];
+        const samplePath = selectedOption.getAttribute('data-src');
+
+        if (samplePath) {
+            showPreview(samplePath);
+        }
+    } else {
+        previewImg.style.display = 'none';
+    }
+});
+
+</script>
+</body>
+</html>
