@@ -6,7 +6,7 @@ import tensorflow as tf
 from flask import Flask, request, render_template, redirect, url_for, session
 from PIL import Image
 
-UPLOAD_FOLDER = "static/uploads"
+UPLOAD_FOLDER = "tmp"
 SAMPLE_DIR = "static/samples"
 
 NORMAL= "Normal"
@@ -107,6 +107,8 @@ def predict():
 
 if __name__ == "__main__":
     # Auto-clean stale uploads on startup
+    if not os.path.exists(UPLOAD_FOLDER):
+         os.mkdir(UPLOAD_FOLDER)
     for filename in os.listdir(UPLOAD_FOLDER):
         file_path = os.path.join(UPLOAD_FOLDER, filename)
         try:

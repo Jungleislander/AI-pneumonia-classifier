@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
 # Create working directory
 WORKDIR /app
 
+# Create tmp directory
+RUN mkdir -p /app/tmp
+
 # Copy project files
 COPY . /app
 
